@@ -1,0 +1,821 @@
+:root {
+    --azul-pastel: #a7c7e7;
+    --verde-pastel: #c1e1c1;
+    --beige: #f5f5dc;
+    --rosa-pastel: #ffd1dc;
+    --gris-claro: #f8f9fa;
+    --gris-texto: #555;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--gris-texto);
+    background-color: var(--beige);
+}
+
+.header {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--gris-texto);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transicion);
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--azul-pastel);
+}
+
+.nav-menu i {
+    font-size: 1.2rem;
+}
+
+.reserva-section {
+    background-color: var(--azul-pastel);
+    padding: 3rem 2rem;
+}
+
+.reserva-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--sombra);
+}
+
+.tipo-viaje {
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.tipo-btn {
+    padding: 1rem 2rem;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.tipo-btn.active {
+    color: var(--azul-pastel);
+}
+
+.tipo-btn.active:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--azul-pastel);
+}
+
+.formulario-reserva {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.formulario-reserva .form-group {
+    margin-bottom: 0;
+}
+
+.destino-select, .formulario-reserva input[type="date"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.pasajeros-dropdown {
+    position: relative;
+}
+
+.dropdown-trigger {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 1rem;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.pasajero-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contador-btn {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ddd;
+    background: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cerrar-dropdown {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--azul-pastel);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.buscar-btn {
+    grid-column: 1 / -1;
+    background-color: var(--verde-pastel);
+    color: #333;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transicion);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.buscar-btn:hover {
+    background-color: #a8d8a8;
+}
+
+.ofertas-section, .ofertas-destacadas {
+    padding: 4rem 2rem;
+    background-color: var(--gris-claro);
+}
+
+.ofertas-section h2, .ofertas-destacadas h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.ofertas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.oferta-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+}
+
+.oferta-card:hover {
+    transform: translateY(-5px);
+}
+
+.oferta-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.oferta-info {
+    padding: 1.5rem;
+}
+
+.oferta-info h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.oferta-info p {
+    margin-bottom: 1rem;
+    color: var(--gris-texto);
+    font-size: 0.9rem;
+}
+
+.precio {
+    font-weight: 700;
+    color: var(--azul-pastel);
+    font-size: 1.2rem;
+}
+
+.filtros-ofertas {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filtro-btn {
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--azul-pastel);
+    background: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.filtro-btn.active {
+    background-color: var(--azul-pastel);
+    color: white;
+}
+
+.oferta-card.grande {
+    grid-column: span 2;
+}
+
+.oferta-imagen {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.oferta-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--rosa-pastel);
+    color: #333;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.precio-antiguo {
+    text-decoration: line-through;
+    color: var(--gris-texto);
+    font-size: 0.9rem;
+}
+
+.reservar-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--azul-pastel);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+.comentarios-section {
+    background-color: var(--rosa-pastel);
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+}
+
+.comentarios-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.comentarios-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.comentarios-form input {
+    padding: 1rem;
+    width: 60%;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.comentarios-form button {
+    padding: 1rem 1.5rem;
+    background-color: var(--azul-pastel);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.mis-vuelos-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+}
+
+.tab-btn.active {
+    color: var(--azul-pastel);
+}
+
+.tab-btn.active:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--azul-pastel);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.vuelo-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--sombra);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.vuelo-ruta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.vuelo-fecha {
+    color: var(--gris-texto);
+}
+
+.vuelo-pasajeros {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.vuelo-acciones {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.accion-btn {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkin {
+    background-color: var(--verde-pastel);
+    color: #333;
+}
+
+.detalles {
+    background-color: var(--azul-pastel);
+    color: white;
+}
+
+.cancelar {
+    background-color: #ffcccc;
+    color: #d63031;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.no-vuelos {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gris-texto);
+}
+
+.ayuda-vuelos {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+.contactar-btn {
+    padding: 1rem 2rem;
+    background-color: var(--azul-pastel);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.contacto-section {
+    padding: 4rem 2rem;
+    background-color: var(--gris-claro);
+}
+
+.contacto-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contacto-info h2, .contacto-form h2 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.info-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--azul-pastel);
+    margin-top: 0.3rem;
+}
+
+.contacto-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.contacto-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contacto-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contacto-form input,
+.contacto-form select,
+.contacto-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contacto-form textarea {
+    resize: vertical;
+}
+
+.enviar-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--azul-pastel);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.preguntas-frecuentes {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-container {
+    margin-top: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-pregunta {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: left;
+    background-color: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.faq-respuesta {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-respuesta p {
+    padding-bottom: 1.5rem;
+}
+
+.faq-item.active .faq-respuesta {
+    max-height: 500px;
+}
+
+.faq-item.active .faq-pregunta i {
+    transform: rotate(180deg);
+}
+
+.faq-pregunta i {
+    transition: transform 0.3s ease;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: var(--transicion);
+}
+
+.social-icons a:hover {
+    color: var(--azul-pastel);
+}
+
+.opinion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.opinion-form input {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.opinion-form button {
+    background-color: var(--azul-pastel);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.opinion-form button:hover {
+    background-color: #8ab6d6;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #555;
+}
+
+.vuelo-card {
+    transition: var(--transicion);
+    position: relative;
+}
+
+.vuelo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.vuelo-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.vuelo-acciones {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.checkin-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkin-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--sombra);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.checkin-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.checkin-form .form-group {
+    margin-bottom: 0;
+}
+
+.checkin-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.checkin-form input,
+.checkin-form select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.checkin-btn {
+    background-color: var(--verde-pastel);
+    color: #333;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transicion);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.checkin-btn:hover {
+    background-color: #a8d8a8;
+}
+
+.detalles-vuelo {
+    display: grid;
+    gap: 1rem;
+}
+
+.detalle-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detalle-item:last-child {
+    border-bottom: none;
+}
+
+.detalle-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.detalle-valor {
+    text-align: right;
+}
+
