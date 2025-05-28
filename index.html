@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroVuelo - Reserva de vuelos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="favicon/x-icon" href="img/mini.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.jpg" alt="AeroVuelo Logo" class="logo">
+            <h1>AeroVuelo</h1>
+        </div>
+        
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html"><i class="fas fa-percentage"></i> Ofertas</a></li>
+                <li><a href="mis-vuelos.html"><i class="fas fa-suitcase"></i> Mis vuelos</a></li>
+                <li><a href="contacto.html"><i class="fas fa-headset"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="reserva-section">
+        <div class="reserva-container">
+            <div class="tipo-viaje">
+                <button class="tipo-btn active" id="ida-vuelta"><i class="fas fa-exchange-alt"></i> Ida y vuelta</button>
+                <button class="tipo-btn" id="solo-ida"><i class="fas fa-arrow-right"></i> Solo ida</button>
+            </div>
+            
+            <div class="formulario-reserva">
+                <div class="form-group">
+                    <label for="origen"><i class="fas fa-plane-departure"></i> Origen</label>
+                    <select id="origen" class="destino-select">
+                        <option value="">Seleccione ciudad de origen</option>
+                        <optgroup label="Destinos más populares">
+                            <option value="BOG">Bogotá (BOG)</option>
+                            <option value="MDE">Medellín (MDE)</option>
+                            <option value="CTG">Cartagena (CTG)</option>
+                        </optgroup>
+                        <optgroup label="Todos los destinos">
+                            <option value="BAQ">Barranquilla (BAQ)</option>
+                            <option value="PEI">Pereira (PEI)</option>
+                            <option value="ADZ">San Andrés (SND)</option>
+                            <option value="MIA">Miami (MIA)</option>
+                            <option value="MAD">Madrid (MAD)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="destino"><i class="fas fa-plane-arrival"></i> Destino</label>
+                    <select id="destino" class="destino-select">
+                        <option value="">Seleccione ciudad de destino</option>
+                        <optgroup label="Destinos más populares">
+                            <option value="MDE">Medellín (MDE)</option>
+                            <option value="CTG">Cartagena (CTG)</option>
+                            <option value="BOG">Bogotá (BOG)</option>
+                        </optgroup>
+                        <optgroup label="Todos los destinos">
+                            <option value="BAQ">Barranquilla (BAQ)</option>
+                            <option value="PEI">Pereira (PEI)</option>
+                            <option value="ADZ">San Andrés (SND)</option>
+                            <option value="MIA">Miami (MIA)</option>
+                            <option value="MAD">Madrid (MAD)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fecha-ida"><i class="far fa-calendar-alt"></i> Fecha de ida</label>
+                    <input type="date" id="fecha-ida" min="2023-11-01">
+                </div>
+                
+                <div class="form-group" id="fecha-vuelta-group">
+                    <label for="fecha-vuelta"><i class="far fa-calendar-alt"></i> Fecha de vuelta</label>
+                    <input type="date" id="fecha-vuelta" min="2023-11-01">
+                </div>
+                
+                <div class="form-group pasajeros-dropdown">
+                    <label for="pasajeros"><i class="fas fa-users"></i> Pasajeros</label>
+                    <div class="dropdown-trigger" id="pasajeros-trigger">
+                        <span>1 Adulto</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-content" id="pasajeros-dropdown">
+                        <div class="pasajero-item">
+                            <span><i class="fas fa-user"></i> Adultos (12+ años)</span>
+                            <div class="contador">
+                                <button class="contador-btn" data-tipo="adultos" data-op="-">-</button>
+                                <span class="cantidad" id="adultos-count">1</span>
+                                <button class="contador-btn" data-tipo="adultos" data-op="+">+</button>
+                            </div>
+                        </div>
+                        <div class="pasajero-item">
+                            <span><i class="fas fa-user-graduate"></i> Jóvenes (12-18 años)</span>
+                            <div class="contador">
+                                <button class="contador-btn" data-tipo="jovenes" data-op="-">-</button>
+                                <span class="cantidad" id="jovenes-count">0</span>
+                                <button class="contador-btn" data-tipo="jovenes" data-op="+">+</button>
+                            </div>
+                        </div>
+                        <div class="pasajero-item">
+                            <span><i class="fas fa-child"></i> Niños (2-11 años)</span>
+                            <div class="contador">
+                                <button class="contador-btn" data-tipo="ninos" data-op="-">-</button>
+                                <span class="cantidad" id="ninos-count">0</span>
+                                <button class="contador-btn" data-tipo="ninos" data-op="+">+</button>
+                            </div>
+                        </div>
+                        <div class="pasajero-item">
+                            <span><i class="fas fa-baby"></i> Bebés (0-2 años)</span>
+                            <div class="contador">
+                                <button class="contador-btn" data-tipo="bebes" data-op="-">-</button>
+                                <span class="cantidad" id="bebes-count">0</span>
+                                <button class="contador-btn" data-tipo="bebes" data-op="+">+</button>
+                            </div>
+                        </div>
+                        <button class="cerrar-dropdown">Aplicar</button>
+                    </div>
+                </div>
+                
+                <button class="buscar-btn" id="buscar-vuelos"><i class="fas fa-search"></i> Buscar vuelos</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="ofertas-section">
+        <h2>Ofertas especiales</h2>
+        <div class="ofertas-grid">
+            <div class="oferta-card">
+                <img src="img/oferta1.jpg" alt="Oferta 1">
+                <div class="oferta-info">
+                    <h3>2x1 en millas</h3>
+                    <p>Vuelos seleccionados a destinos nacionales</p>
+                    <span class="precio">Desde $150.000</span>
+                </div>
+            </div>
+            <div class="oferta-card">
+                <img src="img/oferta2.jpg" alt="Oferta 2">
+                <div class="oferta-info">
+                    <h3>Viaja por Colombia</h3>
+                    <p>Compra hasta el 19 de mayo y vuela hasta septiembre 2025</p>
+                    <span class="precio">Desde $92.700</span>
+                </div>
+            </div>
+            <div class="oferta-card">
+                <img src="img/oferta3.jpg" alt="Oferta 3">
+                <div class="oferta-info">
+                    <h3>Destinos internacionales</h3>
+                    <p>20% de descuento en vuelos a Europa</p>
+                    <span class="precio">Desde $1.200.000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-phone"></i> +57 301 435 8094</p>
+                <p><i class="fas fa-envelope"></i> info@aerovuelo.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>¡Síguenos!</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Comentarios</h4>
+                <form class="opinion-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&#169; 2025 AeroVuelo. Derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

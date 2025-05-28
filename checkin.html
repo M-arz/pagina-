@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroVuelo - Check-in</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="favicon/x-icon" href="img/mini.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.jpg" alt="AeroVuelo Logo" class="logo">
+            <h1>AeroVuelo</h1>
+        </div>
+        
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html"><i class="fas fa-percentage"></i> Ofertas</a></li>
+                <li><a href="mis-vuelos.html"><i class="fas fa-suitcase"></i> Mis vuelos</a></li>
+                <li><a href="contacto.html"><i class="fas fa-headset"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="checkin-section">
+        <h2>Check-in Online</h2>
+        
+        <div class="checkin-container">
+            <form id="checkin-form">
+                <div class="form-group">
+                    <label for="vuelo-id"><i class="fas fa-plane"></i> Número de vuelo</label>
+                    <input type="text" id="vuelo-id" required readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombre-pasajero"><i class="fas fa-user"></i> Nombre completo</label>
+                    <input type="text" id="nombre-pasajero" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pasaporte"><i class="fas fa-passport"></i> Número de pasaporte</label>
+                    <input type="text" id="pasaporte" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="asiento"><i class="fas fa-chair"></i> Preferencia de asiento</label>
+                    <select id="asiento" required>
+                        <option value="">Seleccionar preferencia</option>
+                        <option value="ventana">Ventana</option>
+                        <option value="pasillo">Pasillo</option>
+                        <option value="centro">Centro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="equipaje"><i class="fas fa-suitcase"></i> Equipaje adicional</label>
+                    <select id="equipaje">
+                        <option value="ninguno">Sin equipaje adicional</option>
+                        <option value="1">1 maleta adicional ($50.000)</option>
+                        <option value="2">2 maletas adicionales ($90.000)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="checkin-btn"><i class="fas fa-check-circle"></i> Confirmar Check-in</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-phone"></i> +57 301 435 8094</p>
+                <p><i class="fas fa-envelope"></i> info@aerovuelo.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>¡Síguenos!</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Comentarios</h4>
+                <form class="opinion-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&#169; 2025 AeroVuelo. Derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroVuelo - Contacto y Ayuda</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="favicon/x-icon" href="img/mini.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.jpg" alt="AeroVuelo Logo" class="logo">
+            <h1>AeroVuelo</h1>
+        </div>
+        
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html"><i class="fas fa-percentage"></i> Ofertas</a></li>
+                <li><a href="mis-vuelos.html"><i class="fas fa-suitcase"></i> Mis vuelos</a></li>
+                <li><a href="contacto.html" class="active"><i class="fas fa-headset"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contacto-section">
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <h2>Contáctanos</h2>
+                <p>Estamos aquí para ayudarte con cualquier pregunta o inquietud que tengas.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Teléfono</h4>
+                        <p>+1 234 567 890</p>
+                        <p>Lunes a Viernes: 8am - 8pm</p>
+                        <p>Sábados: 9am - 5pm</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Correo electrónico</h4>
+                        <p>info@aerovuelo.com</p>
+                        <p>soporte@aerovuelo.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Oficinas principales</h4>
+                        <p>Calle 123 #45-67, Bogotá</p>
+                        <p>Colombia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contacto-form">
+                <h2>Formulario de contacto</h2>
+                <form id="formulario-contacto">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Teléfono (opcional)</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Seleccione un asunto</option>
+                            <option value="reserva">Consulta sobre reservas</option>
+                            <option value="cambio">Cambios en vuelos</option>
+                            <option value="reembolso">Reembolsos</option>
+                            <option value="tecnico">Problema técnico</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="enviar-btn"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="preguntas-frecuentes">
+        <h2>Preguntas frecuentes</h2>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-pregunta">
+                    <span>¿Cómo puedo cambiar mi vuelo?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-respuesta">
+                    <p>Puedes cambiar tu vuelo accediendo a "Mis vuelos" en nuestro sitio web o aplicando móvil. También puedes llamar a nuestro centro de atención al cliente. Ten en cuenta que pueden aplicar cargos por cambio dependiendo de tu tipo de tarifa.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-pregunta">
+                    <span>¿Cuál es la política de equipaje?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-respuesta">
+                    <p>La política de equipaje varía según la ruta y clase de servicio. Generalmente, en vuelos nacionales incluimos 1 pieza de equipaje de mano (10kg) y 1 maleta documentada (23kg) en clase económica. Para conocer los detalles específicos de tu vuelo, consulta los términos al momento de hacer la reserva.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-pregunta">
+                    <span>¿Cómo funciona el check-in en línea?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-respuesta">
+                    <p>El check-in en línea está disponible desde 48 horas hasta 1 hora antes del vuelo. Accede a "Mis vuelos", selecciona tu reserva y sigue las instrucciones. Al completarlo, recibirás tu tarjeta de embarque digital que puedes imprimir o guardar en tu dispositivo móvil.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-pregunta">
+                    <span>¿Qué debo hacer si mi vuelo fue cancelado?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-respuesta">
+                    <p>Si tu vuelo fue cancelado, te contactaremos por correo electrónico o mensaje de texto con las opciones disponibles. Puedes reprogramar tu vuelo sin cargos adicionales, solicitar un reembolso o aceptar el crédito para viajes futuros. También puedes contactar a nuestro centro de atención para asistencia inmediata.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-phone"></i> +57 301 435 8094</p>
+                <p><i class="fas fa-envelope"></i> info@aerovuelo.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>¡Síguenos!</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Comentarios</h4>
+                <form class="opinion-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&#169; 2025 AeroVuelo. Derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

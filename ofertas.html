@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroVuelo - Ofertas Especiales</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="favicon/x-icon" href="img/mini.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.jpg" alt="AeroVuelo Logo" class="logo">
+            <h1>AeroVuelo</h1>
+        </div>
+        
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html" class="active"><i class="fas fa-percentage"></i> Ofertas</a></li>
+                <li><a href="mis-vuelos.html"><i class="fas fa-suitcase"></i> Mis vuelos</a></li>
+                <li><a href="contacto.html"><i class="fas fa-headset"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="ofertas-destacadas">
+        <h2>Ofertas Destacadas</h2>
+        <div class="filtros-ofertas">
+            <button class="filtro-btn active">Todas</button>
+            <button class="filtro-btn">Nacionales</button>
+            <button class="filtro-btn">Internacionales</button>
+            <button class="filtro-btn">Última hora</button>
+        </div>
+        
+        <div class="ofertas-grid">
+            <div class="oferta-card grande">
+                <div class="oferta-imagen" style="background-image: url('img/oferta-destacada.jpg');">
+                    <span class="oferta-tag">-30%</span>
+                </div>
+                <div class="oferta-info">
+                    <h3>Verano en Europa</h3>
+                    <p>Vuela a las principales ciudades europeas con descuentos exclusivos</p>
+                    <div class="oferta-detalle">
+                        <span class="precio-antiguo">$2.500.000</span>
+                        <span class="precio">$1.750.000</span>
+                        <span class="validez">Válido hasta: 15/06/2025</span>
+                    </div>
+                    <button class="reservar-btn">Ver oferta</button>
+                </div>
+            </div>
+            
+            <div class="oferta-card">
+                <div class="oferta-imagen" style="background-image: url('img/oferta-caribe.jpg');">
+                    <span class="oferta-tag">2x1</span>
+                </div>
+                <div class="oferta-info">
+                    <h3>Caribe Colombiano</h3>
+                    <p>Paquetes todo incluido en los mejores hoteles</p>
+                    <div class="oferta-detalle">
+                        <span class="precio-antiguo">$1.200.000</span>
+                        <span class="precio">$600.000</span>
+                        <span class="validez">Válido hasta: 30/05/2025</span>
+                    </div>
+                    <button class="reservar-btn">Ver oferta</button>
+                </div>
+            </div>
+            
+            <div class="oferta-card">
+                <div class="oferta-imagen" style="background-image: url('img/oferta-usa.jpg');">
+                    <span class="oferta-tag">-25%</span>
+                </div>
+                <div class="oferta-info">
+                    <h3>Fin de año en USA</h3>
+                    <p>Celebra las fiestas en Nueva York o Miami</p>
+                    <div class="oferta-detalle">
+                        <span class="precio-antiguo">$3.000.000</span>
+                        <span class="precio">$2.250.000</span>
+                        <span class="validez">Válido hasta: 10/12/2025</span>
+                    </div>
+                    <button class="reservar-btn">Ver oferta</button>
+                </div>
+            </div>
+            
+            <div class="oferta-card">
+                <div class="oferta-imagen" style="background-image: url('img/oferta-familiar.jpg');">
+                    <span class="oferta-tag">Familiar</span>
+                </div>
+                <div class="oferta-info">
+                    <h3>Paquete Familiar</h3>
+                    <p>Niños viajan gratis a destinos nacionales</p>
+                    <div class="oferta-detalle">
+                        <span class="precio-antiguo">$1.800.000</span>
+                        <span class="precio">$1.200.000</span>
+                        <span class="validez">Válido hasta: 20/07/2025</span>
+                    </div>
+                    <button class="reservar-btn">Ver oferta</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comentarios-section">
+        <div class="comentarios-container">
+            <h3>¡No te pierdas nuestras mejores ofertas!</h3>
+            <p>Déjanos tu correo y recibe descuentos exclusivos</p>
+            <form class="comentarios-form">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Enviar<i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-phone"></i> +57 301 435 8094</p>
+                <p><i class="fas fa-envelope"></i> info@aerovuelo.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>¡Síguenos!</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Comentarios</h4>
+                <form class="opinion-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&#169; 2025 AeroVuelo. Derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
